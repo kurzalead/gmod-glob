@@ -15,7 +15,7 @@ path portion:
   zero or more directories and subdirectories searching for matches.
   It does not crawl symlinked directories.
 
-The following may be added at a later date.
+The following may be added at a later date:
 
 * `!(pattern|pattern|pattern)` Matches anything that does not match
   any of the patterns provided.
