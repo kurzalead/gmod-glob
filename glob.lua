@@ -1,6 +1,6 @@
 --[[
 
-Copyright 2017 kurzyx
+Copyright 2017 kurzyx https://github.com/kurzyx
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
