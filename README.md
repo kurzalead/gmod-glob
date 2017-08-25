@@ -13,7 +13,6 @@ path portion:
   any character not in the range.
 * `**` If a "globstar" is alone in a path portion, then it matches
   zero or more directories and subdirectories searching for matches.
-  It does not crawl symlinked directories.
 
 The following may be added at a later date:
 
