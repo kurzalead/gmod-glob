@@ -1,7 +1,10 @@
-# gmod-glob
-Glob for garry's mod
+# Glob for Garry's mod
 
-___
+Match files using the patterns the shell uses, like stars and stuff.
+
+Inspiration and stuff comes from: https://github.com/isaacs/node-glob
+
+## Usage
 
 The following characters have special magic meaning when used in a
 path portion:
