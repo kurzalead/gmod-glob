@@ -51,7 +51,7 @@ addons/lua/my-addon
 
 How you would use the glob functionality:
 ```lua
-local result = glob('LUA', '**/*.lua', 'my-addon/config', 'file')
+local result = Glob.glob('LUA', '**/*.lua', 'my-addon/config', 'file')
 ```
 
 result:
