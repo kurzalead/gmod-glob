@@ -56,9 +56,9 @@ local result = glob('LUA', '**/*.lua', 'my-addon/config', 'file')
 result:
 ```lua
 {
-    'modules1/something.lua',
-    'modules1/else.lua',
-    'modules2/something.lua',
-    'modules2/else.lua',
+    'module1/something.lua',
+    'module1/else.lua',
+    'module2/something.lua',
+    'module2/else.lua',
 }
 ```
