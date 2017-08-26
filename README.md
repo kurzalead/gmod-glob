@@ -48,7 +48,7 @@ addons/lua/my-addon
 │   │   ├── else.lua
 ```
 
-How you would use glob functionality:
+How you would use the glob functionality:
 ```lua
 local result = glob('LUA', '**/*.lua', 'my-addon/config', 'file')
 ```
