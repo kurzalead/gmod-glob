@@ -45,7 +45,8 @@ addons/lua/my-addon
 │   │   ├── else.lua
 │   ├── module2
 │   │   ├── something.lua
-│   │   ├── else.lua
+│   │   ├── sub
+│   │   │   ├── else.lua
 ```
 
 How you would use the glob functionality:
@@ -59,6 +60,6 @@ result:
     'module1/something.lua',
     'module1/else.lua',
     'module2/something.lua',
-    'module2/else.lua',
+    'module2/sub/else.lua',
 }
 ```
