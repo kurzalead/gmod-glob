@@ -28,3 +28,37 @@ The following may be added at a later date:
 * `*(a|b|c)` Matches zero or more occurrences of the patterns provided
 * `@(pattern|pat*|pat?erN)` Matches exactly one of the patterns
   provided
+
+## Examples
+
+#### Example 1
+
+Find all configuration files.
+
+File structure:
+```
+addons/lua/my-addon
+.
+├── config
+│   ├── module1
+│   │   ├── something.lua
+│   │   ├── else.lua
+│   ├── module2
+│   │   ├── something.lua
+│   │   ├── else.lua
+```
+
+How you would use glob functionality:
+```lua
+glob('LUA', '**/*.lua', 'my-addon/config', 'file')
+```
+
+Result:
+```lua
+{
+    'modules1/something.lua',
+    'modules1/else.lua',
+    'modules2/something.lua',
+    'modules2/else.lua',
+}
+```
