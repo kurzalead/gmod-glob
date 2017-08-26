@@ -366,13 +366,13 @@ local function _glob(pathType, rootPath, relativePath, part, results)
 
         local files = scanDir(pathType, joinPath(rootPath, relativePath), false)
         local pattern = concat{'^', part.value, '$'}
-        
+
         -- Continue globbing if there's a next part
         if part.next ~= nil then
             for fileName, fileType in pairs(files) do
 
                 -- Can only continue globbing in directories...
-                if pathType ~= FILE_TYPE_DIR then
+                if fileType ~= FILE_TYPE_DIR then
                     continue
                 end
 
@@ -406,7 +406,7 @@ end
 - @param string pathName
 - @param string|nil rootPath
 ]]
-function glob(pathType, pathName, rootPath)
+local function glob(pathType, pathName, rootPath)
     assert(pathName ~= '', "Path name can not be empty!")
 
     if rootPath == nil then
@@ -435,3 +435,13 @@ function glob(pathType, pathName, rootPath)
 
     return results
 end
+
+
+--
+
+Glob = {
+    version = '1.0.0',
+    glob    = glob,
+    join    = joinPath
+}
+return Glob
