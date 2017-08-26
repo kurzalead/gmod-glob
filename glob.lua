@@ -26,8 +26,8 @@ local error  = error
 local HAS_MAGIC_PATTERN = '[*?[]'
 local ESCAPE_PATTERN    = '([' .. ('%^$().[]*+-?'):gsub('(.)', '%%%1') ..'])'
 
-local FILE_TYPE_FILE = 1
-local FILE_TYPE_DIR  = 2
+local FILE_TYPE_FILE = 'file'
+local FILE_TYPE_DIR  = 'dir'
 
 --[[
 - @param string s
@@ -405,12 +405,17 @@ end
 - @param string pathType
 - @param string pathName
 - @param string|nil rootPath
+- @param string|nil fileType
 ]]
-local function glob(pathType, pathName, rootPath)
+local function glob(pathType, pathName, rootPath, filterFileType)
     assert(pathName ~= '', "Path name can not be empty!")
 
     if rootPath == nil then
         rootPath = ''
+    end
+
+    if filterFileType == nil then
+        filterFileType = 'all'
     end
 
     local results = {}
@@ -433,7 +438,14 @@ local function glob(pathType, pathName, rootPath)
         _glob(pathType, rootPath, '', partChain, results)
     end
 
-    return results
+    local sorted = {}
+    for pathName, fileType in pairs(results) do
+        if filterFileType == 'all' or fileType == filterFileType then
+            sorted[#sorted + 1] = pathName
+        end
+    end
+    
+    return sorted
 end
 
 
